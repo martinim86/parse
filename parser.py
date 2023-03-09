@@ -19,11 +19,15 @@ class Parser:
                 sps.append(col[i].value)
             sps.append(datetime.today() - timedelta(days=i))
             self.insert_table(sps)
-        self.table.select_total()
+
 
     def insert_table(self, row):
         self.table.insert_into_table(row)
+    def select_from_table(self):
+        self.table.select_total()
+
 
 
 a = Parser()
 a.read_from_file()
+a.select_from_table()
